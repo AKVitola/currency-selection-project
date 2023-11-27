@@ -1,0 +1,148 @@
+:root {
+  --primary-border-color: #a3a3a3;
+  --primary-background-color: #ececec;
+  --primary-background-hover-color: #dcdcdc;
+  --primary-text-color: #114372;
+  --primary-accent-color: #ff0000;
+  --black-color: #000000;
+  --white-color: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: arial;
+}
+
+.app {
+  margin: 0 auto;
+  padding: 1rem;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 0.2rem;
+  box-shadow: 2px 2px 5px var(--primary-border-color);
+}
+
+.grid {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.grid-item {
+  display: flex;
+  padding: 0.3rem;
+  background: var(--primary-background-color);
+}
+
+.available-currency-wrapper {
+  grid-template-columns: repeat(3, 8rem);
+  column-gap: 0.5rem;
+}
+
+.currency-item {
+  border: 1px solid var(--primary-border-color);
+  justify-content: flex-start;
+  color: var(--primary-text-color);
+  font-size: 1.3rem;
+}
+
+.currency-item:hover {
+  background: var(--primary-background-hover-color);
+}
+
+.currency-is-selected {
+  background: unset;
+}
+
+.currency-code {
+  cursor: pointer;
+}
+
+.selected-currency-wrapper {
+  margin: 0 0 2rem 0;
+  column-gap: 1.2rem;
+  grid-template-columns: repeat(3, 7.5rem);
+
+}
+
+.selected-currency-code {
+  position: relative;
+  border-radius: 0.2rem;
+  justify-content: center;
+  color: var(--black-color);
+}
+
+/* Remove button */
+
+.remove-currency-button {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  height: 1rem;
+  width: 1rem;
+  box-sizing: content-box;
+  border: 2px solid var(--white-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black-color);
+  color: var(--white-color);
+}
+
+.remove-currency-button:hover {
+  border: 2px solid var(--black-color);
+  color: var(--black-color);
+  background: var(--white-color);
+  cursor: pointer;
+}
+
+.remove-icon {
+  font-size: 0.7rem;
+}
+
+/* Checkbox */
+
+.visually-hidden {
+  visibility: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+}
+
+.custom-checkbox-icon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 0.2rem;
+  background: var(--primary-background-color);
+}
+
+.custom-checkbox-icon:after {
+  content: 'X';
+  display: none;
+  position: absolute;
+  top: 3.5px;
+  left: 3px;
+  font-size: 0.9rem;
+  color: var(--primary-accent-color);
+}
+
+.checked > .custom-checkbox-icon:after {
+  display: block;
+}
