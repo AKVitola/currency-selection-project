@@ -1,6 +1,6 @@
 {
   "name": "currency-selection-project",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "test": "vitest --dom",
     "cy:open": "cypress open",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
+    "lint": "eslint",
     "format": "prettier --write src/"
   },
   "dependencies": {

@@ -29,14 +29,15 @@ function removeCurrencyCodeFromSelected(code) {
 
 <template>
   <div class="app">
-    <div class="selected-currency-wrapper grid">
-      <div v-for="selectedCurrencyCode in selectedCurrencies" :key="selectedCurrencyCode">
+    <div class="selected-currency-wrapper grid" data-cy="selected-currency-wrapper">
+      <div v-for="selectedCurrencyCode in selectedCurrencies" :key="selectedCurrencyCode" data-cy="selected-currency">
         <div class="selected-currency-code grid-item">
           {{ selectedCurrencyCode }}
 
           <div
             @click="removeCurrencyCodeFromSelected(selectedCurrencyCode)"
             class="remove-currency-button"
+            data-cy="remove-currency-button"
           >
             <span class="remove-icon">X</span>
           </div>
@@ -44,20 +45,22 @@ function removeCurrencyCodeFromSelected(code) {
       </div>
     </div>
 
-    <div class="available-currency-wrapper grid">
-      <div v-for="currency in availableCurrencies" :key="currency.id">
-        <div class="currency-item grid-item" :class="{ 'currency-is-selected': currency.selected }">
+    <div class="available-currency-wrapper grid" data-cy="available-currency-wrapper">
+      <div v-for="currency in availableCurrencies" :key="currency.id" data-cy="available-currency">
+        <div class="currency-item grid-item" :class="{ 'currency-is-selected': currency.selected }" data-cy="available-currency-item">
           <input
             class="currency-item-checkbox visually-hidden"
             type="checkbox"
             :id="currency.code"
             v-model="currency.selected"
             @change="toggleCurrencySelection(currency.code)"
+            data-cy="currency-checkbox"
           />
           <label
             class="currency-code custom-checkbox"
             :class="{ checked: currency.selected }"
             :for="currency.code"
+            data-cy="currency-label"
           >
             <span class="custom-checkbox-icon" />
             {{ currency.code }}
