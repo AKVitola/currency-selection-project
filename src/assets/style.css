@@ -13,20 +13,31 @@
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
   font-family: arial;
 }
 
 .app {
-  margin: 0 auto;
+  width: 90%;
+  max-width: 500px;
+  margin: 15vh auto auto auto;
   padding: 1rem;
   border: 1px solid var(--primary-border-color);
   border-radius: 0.2rem;
   box-shadow: 2px 2px 5px var(--primary-border-color);
+}
+
+@media (min-width: 481px) {
+  .app {
+    width: 80%;
+    margin: 30vh auto auto auto;
+  }
+}
+
+@media (min-width: 769px) {
+  .app {
+    width: 55%;
+  }
 }
 
 .grid {
@@ -41,8 +52,20 @@ body {
 }
 
 .available-currency-wrapper {
-  grid-template-columns: repeat(3, 8rem);
+  grid-template-columns: repeat(1, 1fr);
   column-gap: 0.5rem;
+}
+
+@media (min-width: 300px) {
+  .available-currency-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 481px) {
+  .available-currency-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .currency-item {
@@ -67,8 +90,13 @@ body {
 .selected-currency-wrapper {
   margin: 0 0 2rem 0;
   column-gap: 1.2rem;
-  grid-template-columns: repeat(3, 7.5rem);
+  grid-template-columns: repeat(2, 1fr);
+}
 
+@media (min-width: 300px) {
+  .selected-currency-wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .selected-currency-code {
@@ -137,7 +165,7 @@ body {
   content: 'X';
   display: none;
   position: absolute;
-  top: 3.5px;
+  top: 4px;
   left: 3px;
   font-size: 0.9rem;
   color: var(--primary-accent-color);

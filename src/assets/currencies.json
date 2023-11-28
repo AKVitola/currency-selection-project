@@ -5,7 +5,7 @@
     { "id": 3, "code": "GEL", "selected": false },
     { "id": 4, "code": "DKK", "selected": false },
     { "id": 5, "code": "CZK", "selected": false },
-    { "id": 6, "code": "CZK", "selected": false },
+    { "id": 6, "code": "GBP", "selected": false },
     { "id": 7, "code": "SEK", "selected": false },
     { "id": 8, "code": "USD", "selected": false },
     { "id": 9, "code": "RUB", "selected": false }
